@@ -1,6 +1,6 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { TextInput } from 'react-native-web';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,15 +9,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#232121',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 30,
   },
   foto: {
     width: 200,
     height: 200,
   },
-  text:{
-    fontWeight:'700',
+  text: {
+    fontWeight: '700',
     fontSize: 30,
-    color: 'white'
+    color: 'white',
   },
   input: {
     width: '80%',
@@ -27,8 +28,20 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
     padding: 10,
-    color: 'white'
-  }
+    color: 'white',
+    marginVertical: 10,
+  },
+  button: {
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  buttonText: {
+    color: 'black',
+    fontWeight: '700'
+  },
 });
 
 export default function App() {
@@ -40,11 +53,14 @@ export default function App() {
           uri: 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png',
         }}
       />
-      <Text style = {styles.text}>Hello, World!</Text>
+      <Text style={styles.text}>Hello, World!</Text>
       <TextInput
-        style = {styles.input}
-        placeholder= "example..."
+        style={styles.input}
+        placeholder="example..."
       />
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Corinthians</Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
